@@ -48,8 +48,7 @@ beforeEach(() => {
 
     return {
       name: `${title}${authors ? ' by ' + authors : ''}${publisher ? ' (published by ' + publisher + ')' : ''}`,
-      value: `${title}${authors ? ' by ' + authors : ''}`,
-      short: `${title}`,
+      value: `${title}${authors ? ' by ' + authors : ''}${publisher ? ' (published by ' + publisher + ')' : ''}`,
     }
   })
 })

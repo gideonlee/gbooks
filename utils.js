@@ -37,8 +37,7 @@ const formatSearchResults = (bookList) => {
       // Inquirer choices prompt {name, value, short}
       let choice = {
         name: `${book?.volumeInfo?.title}${authors ? ' by ' + authors : ''}${publisher ? ' (published by ' + publisher + ')' : ''}`,
-        value: `${book?.volumeInfo?.title}${authors ? ' by ' + authors : ''}`,
-        short: book?.volumeInfo?.title
+        value: `${book?.volumeInfo?.title}${authors ? ' by ' + authors : ''}${publisher ? ' (published by ' + publisher + ')' : ''}`,
       }
       formattedBookList.push(choice)
     })
