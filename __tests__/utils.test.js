@@ -1,4 +1,4 @@
-import {bookSearch, formatSearchResults, checkReadingList} from '../utils'
+import {bookSearch, formatSearchResults} from '../utils'
 import {faker} from '@faker-js/faker'
 import fetchMock from 'fetch-mock'
 
@@ -35,8 +35,7 @@ beforeEach(() => {
   // [
   //  {
   //    name: TITLE by AUTHORS (published by PUBLISHER),
-  //    short: TITLE
-  //    value: TITLE by AUTHORS,
+  //    value: TITLE by AUTHORS (published by PUBLISHER),
   //   }, ...
   // ]
   mockResponse = new Array(numberOfResults)
@@ -77,37 +76,5 @@ describe('formatSearchResults()', () => {
   test('should return an array of formatted query results', () => {
     const formattedResults = formatSearchResults(mockQueryResults) 
     expect(formattedResults).toStrictEqual(mockResponse)
-  })
-})
-
-describe('checkReadingList(): readingList is empty', () => {
-  let book = `${faker.random.words()} by ${faker.name.fullName()}`
-
-  test('isInList should return false.', () => {
-    const {isInList} = checkReadingList(book, [])
-    expect(isInList).toBe(false)
-  })
-})
-
-describe('checkReadingList(): readingList already has selected book', () => {
-  let readingList = []
-  let book = ''
-  let fakeIndex = parseInt(faker.random.numeric())
-
-  beforeEach(() => {
-    // Populate random list of books 
-    for(let i = 0; i < faker.random.numeric(2); i++) {
-      let title = faker.random.words()
-      let author = faker.name.fullName()
-      readingList.push(`${title} by ${author}`)
-    }
-
-    // Pick a book from that list. 
-    book = readingList[fakeIndex]
-  })
-
-  test('isInList should return true', () => {
-    const {isInList} = checkReadingList(book, readingList)
-    expect(isInList).toBe(true)
   })
 })

@@ -34,7 +34,7 @@ const formatSearchResults = (bookList) => {
       // Comma separate multiple authors
       let authors = book?.volumeInfo?.authors?.join(', ')
       let publisher = book?.volumeInfo?.publisher
-      // Inquirer choices prompt {name, value, short}
+      // Inquirer choices prompt {name, value}
       let choice = {
         name: `${book?.volumeInfo?.title}${authors ? ' by ' + authors : ''}${publisher ? ' (published by ' + publisher + ')' : ''}`,
         value: `${book?.volumeInfo?.title}${authors ? ' by ' + authors : ''}${publisher ? ' (published by ' + publisher + ')' : ''}`,
@@ -46,19 +46,4 @@ const formatSearchResults = (bookList) => {
   return formattedBookList
 }
 
-// Checks if book is in reading list based on the title and author
-// titleAndAuthor is `TITLE by AUTHORS`
-const checkReadingList = (titleAndAuthor, readingList) => {
-  let isInList = false
-
-  for (let i = 0; i < readingList.length; i++) {
-    if (readingList[i] === titleAndAuthor) {
-      isInList = true
-      break
-    }
-  }
-
-  return {isInList}
-}
-
-export {bookSearch, formatSearchResults, checkReadingList}
+export {bookSearch, formatSearchResults}

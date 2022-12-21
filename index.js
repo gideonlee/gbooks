@@ -2,7 +2,7 @@
 import {program} from 'commander'
 import inquirer from 'inquirer'
 import conf from 'conf'
-import {bookSearch, checkReadingList} from './utils.js'
+import {bookSearch} from './utils.js'
 
 const config = new conf()
 
@@ -36,7 +36,7 @@ program
             let readingList = config.get('readingList') || []
 
             // Check if book is already in list 
-            const {isInList} = checkReadingList(answer.book, readingList)
+            const isInList = readingList.includes(answer.book)
 
             // Add book if it isn't in reading list
             if (!isInList) {
