@@ -1,0 +1,24 @@
+{
+  "name": "gbooks",
+  "version": "1.0.0",
+  "description": "Allows you to use the Google Books API to search for books and construct a reading list",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "gbooks": "./index.js"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "gideonlee",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "commander": "^9.4.1",
+    "conf": "^10.2.0",
+    "fetch-mock": "^9.11.0",
+    "inquirer": "^9.1.4",
+    "isomorphic-fetch": "^3.0.0",
+    "jest": "^29.3.1"
+  }
+}
