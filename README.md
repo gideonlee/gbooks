@@ -1,5 +1,5 @@
 # Reading List Command Line Application
-This application will allow you to search for books with the Google Books API and add them to a reading list. 
+Gbooks is a command line application that will allow you to search for books with the Google Books API and add them to a local reading list. Each successful search request will return a list of five books with the title, author, and publisher.
 
 ## Installation
 Simply run npm install first and then install the Command Line Application to begin using gbooks. 
@@ -43,7 +43,7 @@ gbooks query "the expanse"
     None of These.
 ```
 
-If you successfully added a book to your reading list, you will a success message.
+If you successfully added a book to your reading list, you will receive a success message.
 ```
 // Your query search
 gbooks query "the expanse"
