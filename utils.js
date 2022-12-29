@@ -16,7 +16,11 @@ const bookSearch = ({query, maxResults = 5}) => {
       return {success: true, books: formatSearchResults(data.items)}
     } else {
       // Bad request
-      return {success: false, books: null, message: `Error: Invalid request.`}
+      return {
+        success: false, 
+        books: null, 
+        message: `Error: ${data?.error?.message ? data?.error?.message : 'Invalid request.'}`
+      }
     }
   })
   .catch((err) => {
