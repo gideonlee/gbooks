@@ -1,8 +1,8 @@
 # Reading List Command Line Application
-This application will allow the you to search for books with the Google Books API and add them to a reading list. 
+This application will allow you to search for books with the Google Books API and add them to a reading list. 
 
 ## Installation
-Simply run npm install first and then install the Command Line Application to begin using this gbooks. 
+Simply run npm install first and then install the Command Line Application to begin using gbooks. 
 ```
 npm install
 npm install -g .
