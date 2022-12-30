@@ -50,4 +50,17 @@ const formatSearchResults = (bookList) => {
   return formattedBookList
 }
 
-export {bookSearch, formatSearchResults}
+// Shows help menu
+const showHelpCommands = () => {
+  console.log(`Usage: books [options] [command] \n`)
+  console.log(`Allows you to use the Google Books API to search for books and construct a reading list.\n`)
+  console.log(`Options:`)
+  console.log(` -V, --version \t\t output the version number`)
+  console.log(` -h, --help \t\t display help for command\n`)
+  console.log(`Commands:`)
+  console.log(` query|q [search...] \t query a book for search argument`)
+  console.log(` list|l \t\t display reading list`)
+  console.log(` help [command] \t display help for command`)
+}
+
+export {bookSearch, formatSearchResults, showHelpCommands}
