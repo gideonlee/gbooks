@@ -111,6 +111,7 @@ describe('bookSearch()', () => {
     })
 
     bookSearch({query: query}).then(response => {
+      expect(response.success).toEqual(true)
       expect(response.books).toEqual([])
     })
   })
