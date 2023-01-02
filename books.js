@@ -82,12 +82,12 @@ const books = () => {
           })
         }
       } else {
-        // No command found. Attempt to match an existing command.
+        // No command found. Attempt to match user entered command with an existing command.
         const maxLengthDifference = 2
         let potentialMatch = ''
         
-        // Simple check for potential matches based on matching first char of command argument 
-        // and if the lengths are approximately equivalent (by maxLengthDifference)
+        // Simple check for potential matches. Checks if first char of command argument matches an existing command
+        // and if the lengths are approximately equivalent (by maxLengthDifference). If so, suggest this match. 
         commands.forEach(actualCommand => {
           if (command[0] === actualCommand[0] && Math.abs(command.length - actualCommand.length) <= maxLengthDifference) {
             potentialMatch = actualCommand
